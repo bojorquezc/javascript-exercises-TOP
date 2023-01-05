@@ -1,5 +1,15 @@
-const findTheOldest = function() {
+const findTheOldest = function (peopleArray) {
+    const oldest = peopleArray.sort(function (a, b) {
+        const lastPerson = a.yearOfDeath - a.yearOfBirth;
+        const nextPerson = b.yearOfDeath - b.yearOfBirth;
 
+        if (lastPerson > nextPerson) {
+            return -1;
+        } else {
+            return 1;
+        }
+    });
+    return oldest[0];
 };
 
 // Do not edit below this line
